@@ -8,7 +8,6 @@
 [Argument]
 arg1 = switch,true,tag=网易严选cookie
 arg2 = input,"45 0,11,21 * * *",tag=网易严选任务
-arg3 = switch,true,tag=网易严选自UA任务开关
 arg4 = switch,true,tag=网易严选任务开关
 arg5 = input,"0 10 * * *",tag=网易严选兑换
 arg6 = switch,true,tag=网易严选兑换开关
@@ -23,8 +22,7 @@ arg14 = input,"30 7 * * *",tag=云闪付签到
 arg15 = switch,true,tag=云闪付任务开关
 
 [Script]
-http-request act-attendance/task/list script-path=WYYX.js, timeout=60, enable = {arg1}, tag=网易严选cookie
-cron {arg2} script-path=WYYX.js, enable= {arg3}, tag=网易严选任务自UA
+http-request act-attendance/task/list script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX.js, timeout=60, enable = {arg1}, tag=网易严选cookie
 cron {arg2} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX.js, enable= {arg4}, tag=网易严选任务
 cron {arg5} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX_Exchange.js, timeout=300, enable= {arg6}, tag=网易严选兑换
 cron {arg7} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX_MONITOR.js, timeout=300, enable= {arg8}, tag=网易严选监控
