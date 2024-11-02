@@ -1,0 +1,39 @@
+#!name = 自用Task
+#!desc = 自用定时任务
+#!data = 2024-09-21
+#!icon = https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png
+#!system = iOS,iPadOS
+#!loon_version = 3.2.3(753)
+
+[Argument]
+arg1 = switch,true,tag=网易严选cookie
+arg2 = input,"45 0,11,21 * * *",tag=网易严选任务
+arg3 = switch,true,tag=网易严选自UA任务开关
+arg4 = switch,true,tag=网易严选任务开关
+arg5 = input,"0 10 * * *",tag=网易严选兑换
+arg6 = switch,true,tag=网易严选兑换开关
+arg7 = input,"3 0 * * *",tag=网易严选监控
+arg8 = switch,true,tag=网易严选监控开关
+arg9 = switch,true,tag=JD获取cookie
+arg10 = switch,true,tag=巴奴火锅cookie
+arg11 = input,"30 7 * * *",tag=巴奴火锅
+arg12 = switch,true,tag=巴奴火锅任务开关
+arg13 = switch,true,tag=云闪付cookie
+arg14 = input,"30 7 * * *",tag=云闪付签到
+arg15 = switch,true,tag=云闪付任务开关
+
+[Script]
+http-request act-attendance/task/list script-path=WYYX.js, timeout=60, enable = {arg1}, tag=网易严选cookie
+cron {arg2} script-path=WYYX.js, enable= {arg3}, tag=网易严选任务自UA
+cron {arg2} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX.js, enable= {arg4}, tag=网易严选任务
+cron {arg5} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX_Exchange.js, timeout=300, enable= {arg6}, tag=网易严选兑换
+cron {arg7} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX_MONITOR.js, timeout=300, enable= {arg8}, tag=网易严选监控
+http-request ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/Lxi0707/Scripts/refs/heads/X/pt_key.js, timeout=60, enable = {arg9}, tag=京东获取cookie
+http-request ^https:\/\/cloud\.banu\.cn\/api\/member\/statistic\?member_id=([a-zA-Z0-9]+) script-path=https://raw.githubusercontent.com/alsoeoe/Loon/main/Script/Bnmdhg_Cookie.js, requires-body=true, timeout=60, enable = {arg10}, tag=巴奴火锅获取ck
+cron {arg11} script-path=https://raw.githubusercontent.com/smallfawn/QLScriptPublic/main/bnmdhg_wx.js, timeout=60, enable = {arg12}, tag=巴奴火锅签到
+http-request ^https:\/\/youhui.95516.com\/newsign\/api\/sharing_power\/showUserTask script-path=ysf.js, timeout=10, enable = {arg13}, tag=云闪付签到获取token
+cron {arg14} script-path=ysf.js, timeout=300, enable = {arg15}, tag=云闪付签到
+
+
+[MITM]
+hostname = act.you.163.com, api.m.jd.com, youhui.95516.com, cloud.banu.cn
