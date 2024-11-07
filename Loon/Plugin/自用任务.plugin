@@ -27,8 +27,8 @@ cron {arg2} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/he
 cron {arg5} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX_Exchange.js, timeout=300, enable= {arg6}, tag=网易严选兑换
 cron {arg7} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX_MONITOR.js, timeout=300, enable= {arg8}, tag=网易严选监控
 http-request ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/Lxi0707/Scripts/refs/heads/X/pt_key.js, timeout=60, enable = {arg9}, tag=京东获取cookie
-http-request ^https:\/\/cloud\.banu\.cn\/api\/member\/statistic\?member_id=([a-zA-Z0-9]+) script-path=https://raw.githubusercontent.com/alsoeoe/Loon/main/Script/Bnmdhg_Cookie.js, requires-body=true, timeout=60, enable = {arg10}, tag=巴奴火锅获取ck
-cron {arg11} script-path=https://raw.githubusercontent.com/smallfawn/QLScriptPublic/main/bnmdhg_wx.js, timeout=60, enable = {arg12}, tag=巴奴火锅签到
+http-request ^https:\/\/cloud\.banu\.cn\/api\/city\/frequent-store script-path=https://raw.githubusercontent.com/ajohn19/TEST/refs/heads/main/qx/bnmdhg.js, requires-body=true, timeout=60, enable = {arg10}, tag=巴奴火锅获取ck
+cron {arg11} script-path=https://raw.githubusercontent.com/ajohn19/TEST/a8415209cc9b4c0cd4af722cb07501f73d88b140/qx/bnmdhg.js, timeout=60, enable = {arg12}, tag=巴奴火锅签到
 http-request ^https:\/\/youhui.95516.com\/newsign\/api\/sharing_power\/showUserTask script-path=ysf.js, timeout=10, enable = {arg13}, tag=云闪付签到获取token
 cron {arg14} script-path=ysf.js, timeout=300, enable = {arg15}, tag=云闪付签到
 
