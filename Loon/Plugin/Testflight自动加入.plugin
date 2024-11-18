@@ -13,6 +13,7 @@ arg1 = switch,true,tag=获取账号令牌开关
 arg2 = switch,true,tag=应用ID捕获开关
 arg3 = switch,true,tag=自动加入TestFlight任务开关
 arg4 = input,"0 */10 * * *",tag=任务定时
+[Script]
 http-request ^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$ script-path=https://kelee.one/Resource/Script/TestFlight/TF_keys.js, enable= {arg1}, tag=获取账号令牌
 
 http-request ^https://testflight.apple.com/join/(.*) script-path=https://kelee.one/Resource/Script/TestFlight/TF_keys.js, enable= {arg2}, tag=应用ID捕获
