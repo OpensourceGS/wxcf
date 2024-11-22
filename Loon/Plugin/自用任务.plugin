@@ -14,9 +14,9 @@ arg6 = switch,true,tag=网易严选兑换开关
 arg7 = input,"3 0 * * *",tag=网易严选监控
 arg8 = switch,true,tag=网易严选监控开关
 arg9 = switch,true,tag=JD获取cookie
-arg10 = switch,true,tag=巴奴火锅cookie
-arg11 = input,"30 7 * * *",tag=巴奴火锅
-arg12 = switch,true,tag=巴奴火锅任务开关
+arg10 = switch,true,tag=Nodeseek Cookie
+arg11 = input,"30 7 * * *",tag=Nodeseek签到
+arg12 = switch,true,tag=Nodeseek任务开关
 arg13 = switch,true,tag=云闪付cookie
 arg14 = input,"30 7 * * *",tag=云闪付签到
 arg15 = switch,true,tag=云闪付任务开关
@@ -27,11 +27,11 @@ cron {arg2} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/he
 cron {arg5} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX_Exchange.js, timeout=300, enable= {arg6}, tag=网易严选兑换
 cron {arg7} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WYYX/WYYX_MONITOR.js, timeout=300, enable= {arg8}, tag=网易严选监控
 http-request ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/Lxi0707/Scripts/refs/heads/X/pt_key.js, timeout=60, enable = {arg9}, tag=京东获取cookie
-http-request ^https:\/\/cloud\.banu\.cn\/api\/member\/statistic\?member_id=([a-zA-Z0-9]+) script-path=https://raw.githubusercontent.com/alsoeoe/Loon/main/Script/Bnmdhg_Cookie.js, requires-body=true, timeout=60, enable = {arg10}, tag=巴奴火锅获取ck
-cron {arg11} script-path=https://raw.githubusercontent.com/ajohn19/TEST/a8415209cc9b4c0cd4af722cb07501f73d88b140/qx/bnmdhg.js, timeout=60, enable = {arg12}, tag=巴奴火锅签到
+http-response ^https:\/\/www\.nodeseek\.com\/api\/account\/getInfo\/.+\?readme=1&signature=1&phone=1 script-path=https://gist.githubusercontent.com/Sliverkiss/2b5acc2c4960dd06618c6912302c2c7f/raw/nodeseek.js, requires-body=true, timeout=60, enable = {arg10}, tag=Nodeseek获取ck
+cron {arg11} script-path=https://gist.githubusercontent.com/Sliverkiss/2b5acc2c4960dd06618c6912302c2c7f/raw/nodeseek.js, timeout=60, enable = {arg12}, tag=Nodeseek签到
 http-request ^https:\/\/youhui.95516.com\/newsign\/api\/sharing_power\/showUserTask script-path=ysf.js, timeout=10, enable = {arg13}, tag=云闪付签到获取token
 cron {arg14} script-path=ysf.js, timeout=300, enable = {arg15}, tag=云闪付签到
 
 
 [MITM]
-hostname = act.you.163.com, api.m.jd.com, youhui.95516.com, cloud.banu.cn
+hostname = act.you.163.com, api.m.jd.com, youhui.95516.com, www.nodeseek.com
