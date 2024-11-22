@@ -1,6 +1,6 @@
 #!name=YoutubeAds
 #!desc=YoutubeAds
-#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1099.png
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YouTube.png
 
 [Rewrite]
 # ======= 视频广告请求 ======= #
