@@ -21,8 +21,8 @@
         }
       ],
       "author": "OpensourceGS",
-      "repo": "https://github.com/OpensourceGS/Surge/JS/SMSForward.js",
-      "script": "https://raw.githubusercontent.com/OpensourceGS/Surge/JS/SMSForward.js",
+      "repo": "https://github.com/OpensourceGS/wxcf/refs/heads/main/Surge/JS/SMSForward.js",
+      "script": "https://raw.githubusercontent.com/OpensourceGS/wxcf/refs/heads/main/Surge/JS/SMSForward.js",
       "icons": [
         "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/message.png",
         "https://raw.githubusercontent.com/Orz-3/mini/master/Color/message.png"
