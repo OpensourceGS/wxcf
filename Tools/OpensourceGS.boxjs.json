@@ -1,6 +1,6 @@
 {
   "id": "custom.sms.forward",
-  "name": "短信验证码转发",
+  "name": "自用Boxjs订阅",
   "author": "OpensourceGS",
   "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/telegram.png",
   "apps": [
