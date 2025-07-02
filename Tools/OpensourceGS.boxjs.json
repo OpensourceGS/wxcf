@@ -1,0 +1,32 @@
+{
+  "id": "custom.sms.forward",
+  "name": "短信验证码转发",
+  "author": "OpensourceGS",
+  "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/telegram.png",
+  "apps": [
+    {
+      "id": "sms_forward",
+      "name": "短信验证码转发",
+      "keys": [],
+      "settings": [
+        {
+          "id": "BARK_URL",
+          "name": "Bark 推送地址",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "支持多条，换行分隔\nhttps://api.day.app/xxx\nhttps://api.day.app/yyy",
+          "autoGrow": true,
+          "rows": 6,
+          "desc": "填写 Bark 推送 URL，可支持多个推送，按行分隔"
+        }
+      ],
+      "author": "OpensourceGS",
+      "repo": "https://github.com/OpensourceGS/Surge/JS/SMSForward.js",
+      "script": "https://raw.githubusercontent.com/OpensourceGS/Surge/JS/SMSForward.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/message.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/message.png"
+      ]
+    }
+  ]
+}
