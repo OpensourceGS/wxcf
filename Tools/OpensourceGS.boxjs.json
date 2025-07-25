@@ -2,7 +2,7 @@
   "id": "custom.sms.forward",
   "name": "自用Boxjs订阅",
   "author": "OpensourceGS",
-  "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/telegram.png",
+  "icon": "https://avatars.githubusercontent.com/u/89370615?s=96&v=4",
   "apps": [
     {
       "id": "sms_forward",
