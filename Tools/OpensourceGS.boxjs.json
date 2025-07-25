@@ -7,7 +7,9 @@
     {
       "id": "sms_forward",
       "name": "短信验证码转发",
-      "keys": [],
+      "keys": [
+        "BARK_URL"
+      ],
       "settings": [
         {
           "id": "BARK_URL",
