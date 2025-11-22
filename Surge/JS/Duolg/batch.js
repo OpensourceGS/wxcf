@@ -1,3 +1,4 @@
+//test
 var response = JSON.parse($response.body);
 var innerBody = JSON.parse(response.responses[0].body);
 if (!innerBody.shopItems) {
