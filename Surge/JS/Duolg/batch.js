@@ -1,8 +1,20 @@
 var response = JSON.parse($response.body);
 var innerBody = JSON.parse(response.responses[0].body);
+
+// Ensure arrays exist
 if (!innerBody.shopItems) {
     innerBody.shopItems = [];
 }
+if (!innerBody.subscriptionConfigs) {
+    innerBody.subscriptionConfigs = [];
+}
+if (!innerBody.trackingProperties) {
+    innerBody.trackingProperties = {};
+}
+if (!innerBody.timerBoostConfig) {
+    innerBody.timerBoostConfig = {};
+}
+
 var shopMaxSub = {
   "purchaseId": "123xxx321yyy1234567890",
   "purchaseDate": 1758267353,
@@ -50,12 +62,16 @@ var configMaxSub = {
     }
   ]
 };
+
 innerBody.shopItems.push(shopMaxSub);
 innerBody.subscriptionConfigs.push(configMaxSub);
+
 innerBody.trackingProperties.has_item_gold_subscription = true;
 innerBody.subscriberLevel = "GOLD";
 innerBody.trackingProperties.monetizable_status = "free_trial_owner_max";
+
 innerBody.timerBoostConfig.timerBoosts = 8;
 innerBody.timerBoostConfig.hasPurchasedTimerBoost = true;
+
 response.responses[0].body = JSON.stringify(innerBody);
 $done({ body: JSON.stringify(response) });
